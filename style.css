@@ -1,0 +1,450 @@
+:root {
+    --light-blue: #78C2ED;
+    --medium-blue: #3988B5;
+    --dark-blue: #0F4C81;
+    --accent-gold: #F3C969;
+    --accent-red: #D15E4C;
+    --gray: #353F4C;
+    --light-gray: #EDF2F7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.fon {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M20 0L40 20L20 40L0 20z" fill="none" stroke="%233988B5" stroke-width="0.5" opacity="0.1"/></svg>');
+    pointer-events: none;
+    z-index: -1;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--medium-blue);
+    border-radius: 5px;
+}
+
+.verh {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--light-blue), var(--dark-blue));
+}
+
+.verh-fon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M50 0 L100 50 L50 100 L0 50z" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/></svg>');
+    background-size: 100px;
+}
+
+.volna {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.volna svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 80px;
+    transform: rotateY(180deg);
+}
+
+.volna .forma {
+    fill: #FFFFFF;
+}
+
+.verh-text {
+    text-align: center;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+h1 {
+    font-size: 4rem;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background: var(--accent-gold);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.podpis {
+    font-size: 1.4rem;
+    margin: 2rem 0;
+    opacity: 0.9;
+}
+
+.knopka {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.knopka svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+.glavnoe {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.blok {
+    margin-bottom: 6rem;
+    position: relative;
+}
+
+.blok::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -30px;
+    width: 60px;
+    height: 60px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 L100 50 L50 100 L0 50z" fill="%233988B5" opacity="0.1"/></svg>');
+    background-size: contain;
+    z-index: -1;
+}
+
+.zagolovok-blok {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+    border-left: 4px solid var(--accent-gold);
+}
+
+h2 {
+    color: var(--dark-blue);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.podzagolovok {
+    color: var(--accent-red);
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h3 {
+    color: var(--medium-blue);
+    font-size: 1.8rem;
+    margin: 2.5rem 0 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+h3::after {
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 3px;
+    background: var(--accent-gold);
+    bottom: -8px;
+    left: 0;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+ul {
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 0.5rem;
+}
+
+li::before {
+    content: "•";
+    color: var(--accent-gold);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.setka {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.kartochka {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    border-top: 4px solid var(--medium-blue);
+}
+
+.kartochka h4 {
+    color: var(--dark-blue);
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.kartochka::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 L100 50 L50 100 L0 50z" fill="%233988B5" opacity="0.05"/></svg>');
+    background-size: contain;
+    z-index: 0;
+}
+
+.tsifry {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.data {
+    position: relative;
+    background: linear-gradient(135deg, var(--medium-blue), var(--dark-blue));
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(15, 76, 129, 0.2);
+    overflow: hidden;
+}
+
+.data::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M30 0L60 30L30 60L0 30z" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/></svg>');
+}
+
+.chislo {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.data div:last-child {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    position: relative;
+}
+
+.tsitata {
+    position: relative;
+    margin: 3rem 0;
+    padding: 2rem 2rem 2rem 4rem;
+    background-color: var(--light-gray);
+    border-radius: 12px;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.tsitata::before {
+    content: "\201C";
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    font-size: 6rem;
+    color: var(--accent-gold);
+    line-height: 1;
+    font-family: Georgia, serif;
+}
+
+.avtor {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--gray);
+}
+
+.vyvod {
+    position: relative;
+    background: linear-gradient(135deg, var(--medium-blue), var(--dark-blue));
+    text-align: center;
+    padding: 5rem 2rem;
+    color: white;
+    border-radius: 12px;
+    margin: 6rem 0;
+    overflow: hidden;
+}
+
+.vyvod::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M50 0 L100 50 L50 100 L0 50z" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/></svg>');
+    background-size: 100px;
+}
+
+.vyvod h2 {
+    color: white;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.vyvod ul, .vyvod p {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+}
+
+.vyvod li {
+    color: white;
+    text-align: left;
+}
+
+.vyvod li::before {
+    color: var(--accent-gold);
+}
+
+.podval {
+    background-color: var(--gray);
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+}
+
+.podval::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M20 0L40 20L20 40L0 20z" fill="none" stroke="white" stroke-width="0.3" opacity="0.05"/></svg>');
+}
+
+.podval .glavnoe {
+    position: relative;
+    padding: 0;
+}
+
+.podval a {
+    color: var(--accent-gold);
+    text-decoration: none;
+}
+
+@media (max-width: 991px) {
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+    
+    .glavnoe {
+        padding: 3rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    .volna svg {
+        height: 50px;
+    }
+    
+    .tsifry {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .glavnoe {
+        padding: 2rem 1rem;
+    }
+    
+    .blok::before {
+        display: none;
+    }
+}
